@@ -19,7 +19,7 @@ template = {
       "email": "salvador.gonzalez.gerpe@upm.es",
       "url": "https://github.com/Salva5297/file2json_bimerr",
     },
-    "termsOfService": "http://me.com/terms", # apache
+    "termsOfService": "https://github.com/Salva5297/file2json_bimerr/blob/master/LICENSE", # apache
     "version": "0.0.1"
   },
   "host": "weather.bimerr.iot.linkeddata.es",  # overrides localhost:500
