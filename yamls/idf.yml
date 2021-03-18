@@ -1,0 +1,22 @@
+Example endpoint returning a transformation of an idf file into json format
+---
+
+consumes:
+  - multipart/form-data
+
+produces:
+  - application/json
+
+parameters:
+  - in: formData
+    name: IdfFile
+    type: file
+    required: true
+    description: The idf file to upload.
+responses:
+  200:
+    description: Success - json data transformation
+  404:
+    description: File not found.
+  500:
+    description: Internal server error.

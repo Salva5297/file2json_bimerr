@@ -1,0 +1,22 @@
+Example endpoint returning a transformation of an epw file into json format
+---
+
+consumes:
+  - multipart/form-data
+
+produces:
+  - application/json
+
+parameters:
+  - in: formData
+    name: EpwFile
+    type: file
+    required: true
+    description: The epw file to upload.
+responses:
+  200:
+    description: Success - json data transformation
+  404:
+    description: File not found.
+  500:
+    description: Internal server error.

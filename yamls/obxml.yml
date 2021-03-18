@@ -1,0 +1,22 @@
+Example endpoint returning a transformation of an obxml file into json format
+---
+
+consumes:
+  - multipart/form-data
+
+produces:
+  - application/json
+
+parameters:
+  - in: formData
+    name: ObxmlFile
+    type: file
+    required: true
+    description: The obxml file to upload.
+responses:
+  200:
+    description: Success - json data transformation
+  404:
+    description: File not found.
+  500:
+    description: Internal server error.

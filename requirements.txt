@@ -1,0 +1,9 @@
+pyepw
+pycountry
+flasgger
+flask==1.1.1
+werkzeug==1.0.0
+Flask-Restful==0.3.8
+yattag==1.14.0
+inflection==0.5.0
+pyidf == 0.2.1
