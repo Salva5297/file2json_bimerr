@@ -29,12 +29,12 @@ def createEPWFile(urls):
 
         name = splitUrlName(url)
 
-        f = open('tmp/'+name+'.epw',"a+")
+        f = open('tmp/'+name,"a+")
         f.write("\n".join(data.splitlines()))
         f.close()
 
-        epw.read('tmp/'+name+'.epw')
-        os.remove('tmp/'+name+'.epw')
+        epw.read('tmp/'+name)
+        os.remove('tmp/'+name)
 
         [listYears.append(str(year._year)) for year in epw.weatherdata]
     listYears = list(dict.fromkeys(listYears))
@@ -46,12 +46,12 @@ def createEPWFile(urls):
 def createEPWFile2(listYears, data, name):
     epw = EPW()
 
-    f = open('tmp/'+name+'.epw',"a+")
+    f = open('tmp/'+name,"a+")
     f.write("".join(data).replace('\r\n','\n'))
     f.close()
 
-    epw.read('tmp/'+name+'.epw')
-    os.remove('tmp/'+name+'.epw')
+    epw.read('tmp/'+name)
+    os.remove('tmp/'+name)
 
     [listYears.append(str(year._year)) for year in epw.weatherdata]
     listYears = list(dict.fromkeys(listYears))
