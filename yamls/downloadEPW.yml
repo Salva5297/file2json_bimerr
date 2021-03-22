@@ -1,0 +1,52 @@
+Obtain the links or years contained in the EPW documents belonging to the city indicated. Change "EnergyPlus" to "OneBuilding" to change the repository where the epw has to be found.
+---
+
+
+consumes:
+  - application/json
+
+produces:
+  - application/json
+
+parameters:
+  - in: body
+    name: data
+    required: true
+    description: Json to upload.
+    schema:
+      $ref: '#/definitions/Links'
+responses:
+  200:
+    description: Success
+  404:
+    description: Not found.
+  500:
+    description: Internal server error.
+
+
+  
+definitions:
+  Links:
+    type: object
+    required:
+      - city
+      - country
+      - continent
+      - source
+      - year
+    properties:
+      city: 
+        type: string
+        example: Madrid
+      country:
+        type: string
+        example: Spain
+      continent:
+        type: string
+        example: Europe
+      source:
+        type: string
+        example: EnergyPlus
+      year:
+        type: integer
+        example: 1985
